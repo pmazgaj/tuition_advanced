@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46d0bc57-d897-44a7-b22a-c3041e38f849" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/async/filess/log.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/async/[ASYNC] calculate_data_save_to_file.py" afterPath="$PROJECT_DIR$/async/[ASYNC] calculate_data_save_to_file.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/biblioteki/1 - numpy/zadania/[NUMPY] [1].py" afterPath="$PROJECT_DIR$/biblioteki/1 - numpy/zadania/[NUMPY] [1].py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/biblioteki/1 - numpy/zadania/[NUMPY] [3].py" afterPath="$PROJECT_DIR$/biblioteki/1 - numpy/zadania/[NUMPY] [3].py" />
-    </list>
+    <list default="true" id="46d0bc57-d897-44a7-b22a-c3041e38f849" name="Default" comment="" />
     <ignored path="szkolenie_zaawansowane.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +36,8 @@
       <file leaf-file-name="linki" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wytyczne/linki">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="129" selection-start-line="0" selection-start-column="129" selection-end-line="0" selection-end-column="129" />
+            <state vertical-scroll-proportion="0.22442244">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -787,8 +781,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wytyczne/linki">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="129" selection-start-line="0" selection-start-column="129" selection-end-line="0" selection-end-column="129" />
+        <state vertical-scroll-proportion="0.22442244">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
