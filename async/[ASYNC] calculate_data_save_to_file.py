@@ -27,8 +27,8 @@ async def compute_values(x, y, z):
 async def save_values(x, y, z, path, name):
     while True:
         await compute_values(x, y, z)
-        with open(path + '\{}.txt'.format(name), mode='w+'):
-            print('hejka')
+        with open(path + '\{}.txt'.format(name), mode='w+') as file:
+            file.write(compute_values(x, y ))
 
 
 def got_result(future):
