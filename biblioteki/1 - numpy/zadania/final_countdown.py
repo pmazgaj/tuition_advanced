@@ -64,7 +64,7 @@ def rotate_2d(pts, cnt, ang=pi / 4):
 
 def solve_for_leg(h, leg1):
     """pythagorean theorum to solve for leg (not hypotenuse)"""
-    return (math.sqrt(h * h - leg1 * leg1))
+    return math.sqrt(h * h - leg1 * leg1)
 
 
 def add_shape(points, degrees=0, alphaParam=1, ec='none', l=0, jn='round'):
@@ -94,7 +94,7 @@ def side3(w, oX, oY, c, e=0):
     p1 = [oX + w / float(2), oY - ((1 / float(3)) * base)]
     p2 = [oX, oY + (2 / float(3)) * base]
     p3 = [oX - w / float(2), oY - ((1 / float(3)) * base)]
-    return ([p1, p2, p3, [oX, oY], c])
+    return [p1, p2, p3, [oX, oY], c]
 
 
 def side4(w, oX, oY, c, e=0):
@@ -103,7 +103,7 @@ def side4(w, oX, oY, c, e=0):
     p2 = [oX - (w - e) / float(2), oY + (w - e) / float(2)]
     p3 = [oX + w / float(2), oY + w / float(2)]
     p4 = [oX + (w - e) / float(2), oY - (w - e) / float(2)]
-    return ([p1, p2, p3, p4, [oX, oY], c])
+    return [p1, p2, p3, p4, [oX, oY], c]
 
 
 def side6(w, oX, oY, c, e=0):
@@ -116,7 +116,7 @@ def side6(w, oX, oY, c, e=0):
     p4 = [oX, oY - (w - e)]
     p5 = [oX - d, oY - w / float(2)]
     p6 = [oX - de, oY + (w - e) / float(2)]
-    return ([p1, p2, p3, p4, p5, p6, [oX, oY], c])
+    return [p1, p2, p3, p4, p5, p6, [oX, oY], c]
 
 
 def side8(w, oX, oY, c, e=0):
@@ -144,51 +144,51 @@ def side12(w, oX, oY, c, e=0):
 
 
 # Functions below are for the box pattern only ##
-def diamondA(w, oX, oY, c='#000000', e=0):
+def diamond_a(w, oX, oY, c='#000000', e=0):
     d = math.sqrt(w * w - ((w / float(2)) * (w / float(2))))
     p1 = [oX, oY]
     p2 = [oX, oY + w - e]
     p3 = [oX - d, oY + w - e + (w / float(2))]
     p4 = [oX - d, oY + (w / float(2))]
-    return ([p1, p2, p3, p4, [oX, oY], c])
+    return [p1, p2, p3, p4, [oX, oY], c]
 
 
-def diamondB(w, oX, oY, c='#000000', e=0):
+def diamond_b(w, oX, oY, c='#000000', e=0):
     d = math.sqrt(w * w - ((w / float(2)) * (w / float(2))))
     p1 = [oX, oY]
     p2 = [oX, oY + w - e]
     p3 = [oX + d, oY + w - e + (w / float(2))]
     p4 = [oX + d, oY + (w / float(2))]
-    return ([p1, p2, p3, p4, [oX, oY], c])
+    return [p1, p2, p3, p4, [oX, oY], c]
 
 
-def diamondC(w, oX, oY, c='#000000', e=0):
+def diamond_c(w, oX, oY, c='#000000', e=0):
     d = math.sqrt(w * w - ((w / float(2)) * (w / float(2))))
     p1 = [oX, oY + e]
     p2 = [oX, oY + w]
     p3 = [oX - d, oY + w + (w / float(2))]
     p4 = [oX - d, oY + (w / float(2)) + e]
-    return ([p1, p2, p3, p4, [oX, oY], c])
+    return [p1, p2, p3, p4, [oX, oY], c]
 
 
-def diamondD(w, oX, oY, c='#000000', e=0):
+def diamond_d(w, oX, oY, c='#000000', e=0):
     d = math.sqrt(w * w - ((w / float(2)) * (w / float(2))))
     p1 = [oX, oY + e]
     p2 = [oX, oY + w]
     p3 = [oX + d, oY + w + (w / float(2))]
     p4 = [oX + d, oY + (w / float(2)) + e]
-    return ([p1, p2, p3, p4, [oX, oY], c])
+    return [p1, p2, p3, p4, [oX, oY], c]
 
 
 #####################################################################
 # ----------------- Remove temp files and finish ------------------ #
 #####################################################################
 
-def removal(maxdegrees):
-    for n in range(0, maxdegrees):
-        deletename = str('temp' + repr(n) + '.png')
+def removal(max_degrees):
+    for n in range(0, max_degrees):
+        delete_name = str('temp' + repr(n) + '.png')
         try:
-            os.remove(deletename)
+            os.remove(delete_name)
         except OSError:
             pass
 
@@ -198,7 +198,7 @@ def removal(maxdegrees):
 # --------------------- Pattern 1: Star flex ---------------------- #
 #####################################################################
 
-def starFlex(c1, c2, c3, c4, c5, tag):
+def star_flex(c1, c2, c3, c4, c5, tag):
     global fig
     global sub1
     fig = plt.figure(figsize=(4.55, 2.6))
@@ -241,8 +241,8 @@ def starFlex(c1, c2, c3, c4, c5, tag):
             pts2 = side6(13, ba[n][0], ba[n][1], c2, lhex[frame])
             pts3 = side3(22.5, ba[n][0], ba[n][1], c1)
             pts4 = side3(5.5, ba[n][0], ba[n][1], c3)
-            add_shape(pts2, ba[n][2] / (3))
-            add_shape(pts3, ba[n][2] / (3))
+            add_shape(pts2, ba[n][2] / 3)
+            add_shape(pts3, ba[n][2] / 3)
             add_shape(pts, ba[n][2])
             add_shape(pts4, ba[n][2] * -1, 1)
 
@@ -268,12 +268,12 @@ def starFlex(c1, c2, c3, c4, c5, tag):
 
     images = []  # Turn a list of images into a GIF using ImageIO
     for n in range(0, len(op)):
-        readname = str('temp' + repr(n) + '.png')
-        if readname == 'temp1.png' or readname == 'temp7.png':
+        read_name = str('temp' + repr(n) + '.png')
+        if read_name == 'temp1.png' or read_name == 'temp7.png':
             for c in range(0, 8):
-                images.append(imageio.imread(readname))
+                images.append(imageio.imread(read_name))
         else:
-            images.append(imageio.imread(readname))
+            images.append(imageio.imread(read_name))
     imageio.mimsave(str(tag) + '.gif', images)
     plt.close('all')
 
@@ -317,48 +317,49 @@ def box_slide(c1, c2, c3, c4, c5, tag):
         sub1.axis('off')
         sub1.add_patch(patches.Rectangle((0, 0), d * 5, w * 3, fc=c3, alpha=1, ec='none'))
 
-        e1_lenght = len(e1)
+        e1_length = len(e1)
         for n in range(0, len(ish)):
-            if x < e1_lenght or x >= 2 * e1_lenght and x < 3 * e1_lenght or x >= 4 * e1_lenght:  # down to the right side
-                if x < e1_lenght:
+            # down to the right side
+            if x < e1_length or x in range(2 * e1_length, 3 * e1_length) or x >= 4 * e1_length:
+                if x < e1_length:
                     count = 0
                     eno = x
-                elif x < 3 * e1_lenght:
+                elif x < 3 * e1_length:
                     count = 2
-                    eno = x - e1_lenght * 2
-                elif x < 5 * e1_lenght:
+                    eno = x - e1_length * 2
+                elif x < 5 * e1_length:
                     count = 4
-                    eno = x - 5 * e1_lenght * 2
-                pts2 = diamondA(w - f, ish[n][0], ish[n][1], e=0, c=cL[count])
+                    eno = x - 5 * e1_length * 2
+                pts2 = diamond_a(w - f, ish[n][0], ish[n][1], e=0, c=cL[count])
                 add_shape(pts2)
-                pts = diamondD(w - f, ish[n][0], ish[n][1], e=0, c=cR[count])  # background
+                pts = diamond_d(w - f, ish[n][0], ish[n][1], e=0, c=cR[count])  # background
                 add_shape(pts)
-                pts = diamondD(w - f, ish[n][0], ish[n][1], e=e1[eno], c=cR[count + 1])
+                pts = diamond_d(w - f, ish[n][0], ish[n][1], e=e1[eno], c=cR[count + 1])
                 add_shape(pts, alphaParam=o1[eno])
-                pts3 = diamondC(w - f, ish[n][0] + d - f, ish[n][1] + w + (w / float(2)) - f * 1.5,
-                                e=0, c=cTop[count])  # background
+                pts3 = diamond_c(w - f, ish[n][0] + d - f, ish[n][1] + w + (w / float(2)) - f * 1.5,
+                                 e=0, c=cTop[count])  # background
                 add_shape(pts3, 60)
-                pts3 = diamondC(w - f, ish[n][0] + d - f, ish[n][1] + w + (w / float(2)) - f * 1.5,
-                                e=e1[eno], c=cTop[count + 1])
+                pts3 = diamond_c(w - f, ish[n][0] + d - f, ish[n][1] + w + (w / float(2)) - f * 1.5,
+                                 e=e1[eno], c=cTop[count + 1])
                 add_shape(pts3, 60)
-            elif x < 2 * len(e1) or x in range(3 * e1_lenght, 4 * e1_lenght):  # up from the left side
-                if x < 2 * e1_lenght:
+            elif x < 2 * len(e1) or x in range(3 * e1_length, 4 * e1_length):  # up from the left side
+                if x < 2 * e1_length:
                     count = 1
-                    eno = x - e1_lenght
-                elif x < 4 * e1_lenght:
+                    eno = x - e1_length
+                elif x < 4 * e1_length:
                     count = 3
-                    eno = x - e1_lenght * 3
-                pts2 = diamondC(w - f, ish[n][0], ish[n][1], e=0, c=cL[count])  # background
+                    eno = x - e1_length * 3
+                pts2 = diamond_c(w - f, ish[n][0], ish[n][1], e=0, c=cL[count])  # background
                 add_shape(pts2)
-                pts2 = diamondC(w - f, ish[n][0], ish[n][1], e=e1[eno], c=cL[count + 1])
+                pts2 = diamond_c(w - f, ish[n][0], ish[n][1], e=e1[eno], c=cL[count + 1])
                 add_shape(pts2, alphaParam=o1[eno])
-                pts = diamondD(w - f, ish[n][0], ish[n][1], e=0, c=cR[count])  # background
+                pts = diamond_d(w - f, ish[n][0], ish[n][1], e=0, c=cR[count])  # background
                 add_shape(pts)
-                pts3 = diamondB(w - f, ish[n][0] + d - f,
-                                ish[n][1] + w + (w / float(2)) - f * 1.5, e=0, c=cTop[count])  # background
+                pts3 = diamond_b(w - f, ish[n][0] + d - f,
+                                 ish[n][1] + w + (w / float(2)) - f * 1.5, e=0, c=cTop[count])  # background
                 add_shape(pts3, 120)
-                pts3 = diamondB(w - f, ish[n][0] + d - f,
-                                ish[n][1] + w + (w / float(2)) - f * 1.5, e=e1[eno], c=cTop[count + 1])
+                pts3 = diamond_b(w - f, ish[n][0] + d - f,
+                                 ish[n][1] + w + (w / float(2)) - f * 1.5, e=e1[eno], c=cTop[count + 1])
                 add_shape(pts3, 120)
         save_name = str('temp' + repr(x) + '.png')
         fig.savefig(save_name, bbox_inches='tight', pad_inches=0, dpi=50)
@@ -367,8 +368,8 @@ def box_slide(c1, c2, c3, c4, c5, tag):
     images = []  # Turn a list of images into a GIF using ImageIO
     for n in range(0, 35):
         read_name = str('temp' + repr(n) + '.png')
-        if (read_name == 'temp0.png' or read_name == 'temp9.png' or
-                    read_name == 'temp18.png' or read_name == 'temp27.png'):
+        if (read_name == 'temp0.png' or
+                    read_name == 'temp9.png' or read_name == 'temp18.png' or read_name == 'temp27.png'):
             for c in range(0, 4):
                 images.append(imageio.imread(read_name))
         else:
@@ -495,7 +496,7 @@ def octagon_flex(c1, c2, c3, c4, c5, tag):
             pts2 = side8(9, shapes2[n][0], shapes2[n][1], c3, e[frame])
             pts3 = side8(9, shapes2[n][0], shapes2[n][1], col2[n], e[frame])
             add_shape(pts, 45, 1)
-            add_shape(pts2, 0, opacity[frame] * 0.5)
+            add_shape(pts2, 0, int(opacity[frame] * 0.5))
             add_shape(pts3, 45)
             add_shape(pts2, 45, opacity[frame])
 
@@ -655,7 +656,7 @@ for x in range(0, len(colorList)):
     assert randomList[-1] == 100, 'The random list of probabilities should cover 0-100'
 
     if randomSeed <= randomList[0]:
-        starFlex(c1, c2, c3, c4, c5, tag)  # Pattern 1
+        star_flex(c1, c2, c3, c4, c5, tag)  # Pattern 1
     elif randomSeed <= randomList[1]:
         box_slide(c1, c2, c3, c4, c5, tag)  # Pattern 2
     elif randomSeed <= randomList[2]:
