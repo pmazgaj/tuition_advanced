@@ -3,11 +3,12 @@ Main application module handler
 """
 
 import tkinter as tk
-from modules.settings import LARGE_FONT
-from modules.pages.pages import StartPage, PageOne, PageTwo
+from projekty.modules.pages.pages import StartPage, PageOne, PageTwo
 
 
 class MainApplication(tk.Tk):
+    """Main application handler (controller)"""
+
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
         container = tk.Frame(self)
@@ -45,5 +46,5 @@ class MainApplication(tk.Tk):
 
 
 # create main application and then run main loop
-app = MainApplication()
-app.mainloop()
+APP = MainApplication()
+APP.mainloop()
